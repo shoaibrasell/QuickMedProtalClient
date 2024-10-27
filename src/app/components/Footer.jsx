@@ -1,52 +1,26 @@
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import { ThemeProvider, styled, useTheme } from "@mui/material/styles";
-
-import { Paragraph, Span } from "./Typography";
-import useSettings from "app/hooks/useSettings";
-import { topBarHeight } from "app/utils/constant";
+import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
 
 // STYLED COMPONENTS
-const AppFooter = styled(Toolbar)(() => ({
+const AppFooter = styled(Toolbar)({
   display: "flex",
   alignItems: "center",
-  minHeight: topBarHeight,
-  "@media (max-width: 499px)": {
-    display: "table",
-    width: "100%",
-    minHeight: "auto",
-    padding: "1rem 0",
-    "& .container": {
-      flexDirection: "column !important",
-      "& a": { margin: "0 0 16px !important" }
-    }
-  }
-}));
-
-const FooterContent = styled("div")(() => ({
-  width: "100%",
-  display: "flex",
-  alignItems: "center",
-  padding: "0px 1rem",
-  maxWidth: "1170px",
-  margin: "0 auto"
-}));
+  justifyContent: "center",
+  minHeight: "40px", // Adjust the height as needed
+  padding: "1rem",
+  backgroundColor: "#00bcd4" // Cyan color for the footer background
+});
 
 export default function Footer() {
-  const theme = useTheme();
-  const { settings } = useSettings();
-
-  const footerTheme = settings.themes[settings.footer.theme] || theme;
-
   return (
-    <ThemeProvider theme={footerTheme}>
-      <AppBar color="primary" position="center" sx={{ zIndex: 96 }}>
-        <AppFooter>
-          <FooterContent>
-            <Paragraph m={0}>Design and Developed by SomeOne</Paragraph>
-          </FooterContent>
-        </AppFooter>
-      </AppBar>
-    </ThemeProvider>
+    <AppBar position="static" color="transparent" sx={{ boxShadow: "none" }}>
+      <AppFooter>
+        <Typography variant="body1" sx={{ fontWeight: 500, fontSize: "1rem" }}>
+          Design and Developed by @ S-U-R
+      </Typography>
+      </AppFooter>
+    </AppBar>
   );
 }

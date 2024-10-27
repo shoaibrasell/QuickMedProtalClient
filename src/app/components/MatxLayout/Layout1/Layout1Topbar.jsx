@@ -104,32 +104,10 @@ const Layout1Topbar = () => {
   return (
     <TopbarRoot>
       <TopbarContainer>
-        <Box display="flex">
-          <StyledIconButton onClick={handleSidebarToggle}>
-            <Menu />
-          </StyledIconButton>
-
-          <IconBox>
-            <StyledIconButton>
-              <MailOutline />
-            </StyledIconButton>
-
-            <StyledIconButton>
-              <WebAsset />
-            </StyledIconButton>
-
-            <StyledIconButton>
-              <StarOutline />
-            </StyledIconButton>
-          </IconBox>
-        </Box>
+        <Box display="flex"></Box>
 
         <Box display="flex" alignItems="center">
           <MatxSearchBox />
-
-          <NotificationProvider>
-            <NotificationBar />
-          </NotificationProvider>
 
           <ShoppingCart />
 
@@ -142,7 +120,8 @@ const Layout1Topbar = () => {
 
                 <Avatar src={user.avatar} sx={{ cursor: "pointer" }} />
               </UserMenu>
-            }>
+            }
+          >
             <StyledItem>
               <Link to="/">
                 <Home />

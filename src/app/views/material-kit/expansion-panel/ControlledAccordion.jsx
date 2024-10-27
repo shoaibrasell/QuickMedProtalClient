@@ -9,12 +9,12 @@ import { useState } from "react";
 const Heading = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.pxToRem(15),
   flexBasis: "33.33%",
-  flexShrink: 0,
+  flexShrink: 0
 }));
 
 const SecondaryHeading = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.pxToRem(15),
-  color: theme.palette.text.secondary,
+  color: theme.palette.text.secondary
 }));
 
 export default function ControlledExpansionPanels() {

@@ -14,6 +14,7 @@ const AppEchart = Loadable(lazy(() => import("app/views/charts/echarts/AppEchart
 // DASHBOARD PAGE
 const Analytics = Loadable(lazy(() => import("app/views/dashboard/Analytics")));
 const Prescription = Loadable(lazy(() => import("app/views/prescription/prescription")));
+const DoctorList = Loadable(lazy(() => import("app/views/doctor/DoctorList")));
 
 const routes = [
   { path: "/", element: <Navigate to="dashboard/default" /> },
@@ -27,7 +28,8 @@ const routes = [
       ...materialRoutes,
       // dashboard route
       { path: "/dashboard/default", element: <Analytics />, auth: authRoles.admin },
-      {path: "/prescription", element:<Prescription/>, auth: authRoles.admin },
+      { path: "/prescription", element: <Prescription />, auth: authRoles.admin },
+      { path: "/doctorList", element: <DoctorList />, auth: authRoles.admin },
       // e-chart route
       { path: "/charts/echarts", element: <AppEchart />, auth: authRoles.editor }
     ]
